@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  mysql-service:
+    image: mysql:8.3
+    container_name: mysql-container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: gitpass2016
+      MYSQL_DATABASE: tasks
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  app:
+      image: muhohoweb/larave-app
+      container_name: laravel-app
+      depends_on:
+        - mysql-service
+      ports:
+        - "8083:80"
+      volumes:
+        - .:/var/www/html
+
+volumes:
+  mysql_data:
