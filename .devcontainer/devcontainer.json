@@ -1,0 +1,14 @@
+{
+    "name": "Laravel Dev Container",
+    "image": "muhohoweb/laravel-app",
+    "extensions": [
+        "felixfbecker.php-debug"
+    ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "forwardPorts": [8000],
+    "dockerComposeFile": "../docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspace"
+}
