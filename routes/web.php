@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Models\Task;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 /**
     * Show Task Dashboard
@@ -63,7 +66,7 @@ Route::post('/task', function (Request $request) {
     */
 Route::delete('/task/{id}', function ($id) {
     Log::info('Delete /task/'.$id);
-    Task::findOrFail($id)->delete();
+    Task::query()->findOrFail($id)->delete();
     // Clear the cache
     Cache::flush();
 
