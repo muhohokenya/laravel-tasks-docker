@@ -30,7 +30,7 @@ Route::get('/', function () {
         $data = Cache::get('tasks');
         return view('tasks', ['tasks' => $data, 'elapsed' => microtime(true) - $startTime]);
     } else {
-        $data = Task::orderBy('created_at', 'asc')->get();
+        $data = Task::query()->orderBy('created_at', 'asc')->get();
         Cache::add('tasks', $data);
         return view('tasks', ['tasks' => $data, 'elapsed' => microtime(true) - $startTime]);
     }
