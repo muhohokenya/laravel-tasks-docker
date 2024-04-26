@@ -1,4 +1,4 @@
-version: "3.8"
+version: '3.8'
 
 services:
   mysql-service:
@@ -14,14 +14,14 @@ services:
       - mysql_data:/var/lib/mysql
 
   app:
-      image: muhohoweb/larave-app
-      container_name: laravel-app
-      depends_on:
-        - mysql-service
-      ports:
-        - "8083:80"
-      volumes:
-        - .:/var/www/html
+    image: muhohoweb/larave-app
+    container_name: laravel-app
+    depends_on:
+      - mysql-service
+    ports:
+      - "8083:80"
+    volumes:
+      - .:/var/www/html
 
 volumes:
   mysql_data:
