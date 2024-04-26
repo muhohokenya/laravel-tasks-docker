@@ -24,7 +24,9 @@ class TasksController extends Controller
 
     public function node(): JsonResponse
     {
-        $host = gethostbyname();
+        $host = gethostname();
+
+        $ip = gethostbyname($host);
         return Response::json([
             'host'=>$host
         ]);
