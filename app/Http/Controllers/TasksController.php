@@ -28,7 +28,7 @@ class TasksController extends Controller
 
         $ip = gethostbyname($host);
         return Response::json([
-            'host'=>$host
+            'host'=>$ip
         ]);
     }
 
