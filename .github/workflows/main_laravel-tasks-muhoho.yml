@@ -40,36 +40,35 @@ jobs:
           name: php-app
           path: release.zip
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-    permissions:
-      id-token: write #This is required for requesting the JWT
-
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v3
-        with:
-          name: php-app
-
-      - name: Unzip artifact for deployment
-        run: unzip release.zip
-      
-      - name: Login to Azure
-        uses: azure/login@v1
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_C459A837A21449469FC0C9EFF509C3A5 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_3AB41EA917B94BDB9309FF3D2F1F7FBF }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_F258A830F51145148C6643C45530E18F }}
-
-      - name: 'Deploy to Azure Web App'
-        uses: azure/webapps-deploy@v2
-        id: deploy-to-webapp
-        with:
-          app-name: 'laravel-tasks-muhoho'
-          slot-name: 'Production'
-          package: .
-          
+#   deploy:
+#     runs-on: ubuntu-latest
+#     needs: build
+#     environment:
+#       name: 'Production'
+#       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+#     permissions:
+#       id-token: write #This is required for requesting the JWT
+#
+#     steps:
+#       - name: Download artifact from build job
+#         uses: actions/download-artifact@v3
+#         with:
+#           name: php-app
+#
+#       - name: Unzip artifact for deployment
+#         run: unzip release.zip
+#
+#       - name: Login to Azure
+#         uses: azure/login@v1
+#         with:
+#           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_C459A837A21449469FC0C9EFF509C3A5 }}
+#           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_3AB41EA917B94BDB9309FF3D2F1F7FBF }}
+#           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_F258A830F51145148C6643C45530E18F }}
+#
+#       - name: 'Deploy to Azure Web App'
+#         uses: azure/webapps-deploy@v2
+#         id: deploy-to-webapp
+#         with:
+#           app-name: 'laravel-tasks-muhoho'
+#           slot-name: 'Production'
+#           package: .
