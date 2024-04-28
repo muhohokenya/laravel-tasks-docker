@@ -44,8 +44,8 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: 'us-easr-1'
-          aws-bucket: ${{ secrets.AWS_BUCKET }}
+          aws-region: 'us-east-1'
+          aws-bucket: 'tech-space-bucket'
           file-path: release.zip
 #   deploy:
 #     runs-on: ubuntu-latest
