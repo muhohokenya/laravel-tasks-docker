@@ -67,18 +67,18 @@ server {
 }
 
 EOF
-sudo unlink /etc/nginx/sites-enabled/default
-sudo rm /etc/nginx/sites-available/default
+#sudo unlink /etc/nginx/sites-enabled/default
+#sudo rm /etc/nginx/sites-available/default
 
 sudo chown -R www-data:www-data storage bootstrap/cache
 sudo chmod -R 775 storage bootstrap/cache
 
 # Enable the new site and reload Nginx
-sudo ln -s /etc/nginx/sites-available/laravel.conf /etc/nginx/sites-enabled/
+#sudo ln -s /etc/nginx/sites-available/laravel.conf /etc/nginx/sites-enabled/
 
 sudo systemctl reload nginx
 
 # Check if .env file exists, copy from example if not
-if [ ! -f .env ]; then
-    cp .env.example .env
-fi
+#if [ ! -f .env ]; then
+#    cp .env.example .env
+#fi
