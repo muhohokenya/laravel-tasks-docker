@@ -7,6 +7,7 @@ sed -i "s/^DB_HOST=.*/DB_HOST=$DB_HOST/" .env
 sed -i "s/^DB_DATABASE=.*/DB_DATABASE=tasks/" .env
 sed -i "s/^DB_USERNAME=.*/DB_USERNAME=laravel_user/" .env
 sed -i "s/^DB_PASSWORD=.*/DB_PASSWORD=gitpass2016/" .env
+sudo rm /var/www/html/composer.lock
 php artisan migrate
 php artisan db:seed
 

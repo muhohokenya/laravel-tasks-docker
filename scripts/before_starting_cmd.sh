@@ -18,5 +18,3 @@ chmod +x ./install
 sudo ./install auto
 
 systemctl status codedeploy-agent
-
-sudo rm /var/www/html/composer.lock
