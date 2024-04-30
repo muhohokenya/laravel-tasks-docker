@@ -9,7 +9,7 @@ sudo add-apt-repository ppa:ondrej/php -y
 sudo apt-get install -y mysql-client-core-8.0
 
 # Install Nginx and PHP 8.1 with required extensions
-sudo apt-get install -y nginx php8.1-fpm php8.1 php8.1-cli php8.1-pdo php8.1-mysql php8.1-zip git unzip curl php8.1-xml php8.1-curl
+sudo apt-get install -y nginx php8.2-fpm php8.2 php8.2-cli php8.2-pdo php8.2-mysql php8.2-zip git unzip curl php8.2-xml php8.2-curl
 
 # Start and enable Nginx and PHP-FPM
 sudo systemctl start nginx
