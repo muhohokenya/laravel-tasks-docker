@@ -21,6 +21,7 @@ sudo systemctl enable php8.1-fpm
 sudo chown -R www-data:www-data /var/www/html
 
 # Set the working directory to the web root
+# shellcheck disable=SC2164
 cd /var/www/html/
 
 # Remove default index.html
@@ -29,12 +30,6 @@ sudo rm -f /var/www/html/index.nginx-debian.html
 # Install Composer globally
 sudo curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
-# Clone the Laravel project repository
-git clone https://github.com/muhohokenya/laravel-tasks-docker.git /var/www/html/
-
-sudo rm -f /var/www/html/composer.lock
-# Composer install without interaction
-sudo composer install --no-interaction
 
 # Set proper permissions for directories
 sudo chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache

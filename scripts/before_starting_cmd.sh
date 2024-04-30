@@ -8,6 +8,7 @@ sudo apt install ruby-full -y
 
 sudo apt install wget
 
+# shellcheck disable=SC2164
 cd /home/ubuntu
 
 wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install
