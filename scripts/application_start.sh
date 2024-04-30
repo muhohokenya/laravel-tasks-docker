@@ -14,6 +14,5 @@ php artisan db:seed
 if ! grep -q "APP_KEY=" .env; then
     php artisan key:generate
 fi
-
 # Output a success message
 echo "Nginx and PHP setup completed. Verify by accessing your server's IP."
