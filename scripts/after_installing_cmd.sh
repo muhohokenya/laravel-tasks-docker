@@ -31,7 +31,7 @@ cd /var/www/html/
 # Set proper permissions for directories
 sudo chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 sudo chmod -R 777 /var/www/html/storage /var/www/html/bootstrap/cache
-
+sudo test -f /etc/nginx/sites-available/laravel.conf && sudo rm -f /etc/nginx/sites-available/laravel.conf
 # Configure Nginx server block
 cat <<EOF | sudo tee /etc/nginx/sites-available/laravel.conf
 server {
