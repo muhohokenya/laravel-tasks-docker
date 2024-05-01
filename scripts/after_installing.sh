@@ -37,7 +37,7 @@ cat <<EOF | sudo tee /etc/nginx/sites-available/laravel.conf
 server {
     listen 80;
     listen [::]:80;
-    server_name example.com;
+    server_name test.com;
     root /var/www/html/public;
 
     add_header X-Frame-Options "SAMEORIGIN";
