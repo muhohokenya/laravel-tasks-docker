@@ -5,7 +5,7 @@ composer install
 
 # shellcheck disable=SC2154
 #echo "DB_HOST=${db_endpoint}"
-DB_HOST="terraform-20240430155304425500000003.cjr4qbxdh5o6.us-east-1.rds.amazonaws.com"
+DB_HOST="terraform-20240501161537072800000003.cjr4qbxdh5o6.us-east-1.rds.amazonaws.com"
 sed -i "s/^DB_HOST=.*/DB_HOST=$DB_HOST/" .env
 sed -i "s/^DB_DATABASE=.*/DB_DATABASE=tasks/" .env
 sed -i "s/^DB_USERNAME=.*/DB_USERNAME=laravel_user/" .env
