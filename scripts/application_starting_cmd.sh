@@ -1,15 +1,13 @@
 #!/bin/bash
 
-sudo rm /var/www/html/composer.lock
-composer install
-
 # shellcheck disable=SC2154
 #echo "DB_HOST=${db_endpoint}"
 DB_HOST="terraform-20240501161537072800000003.cjr4qbxdh5o6.us-east-1.rds.amazonaws.com"
-sed -i "s/^DB_HOST=.*/DB_HOST=$DB_HOST/" .env
-sed -i "s/^DB_DATABASE=.*/DB_DATABASE=tasks/" .env
-sed -i "s/^DB_USERNAME=.*/DB_USERNAME=laravel_user/" .env
-sed -i "s/^DB_PASSWORD=.*/DB_PASSWORD=gitpass2016/" .env
+sudo sed -i "s/^DB_HOST=.*/DB_HOST=$DB_HOST/" .env
+sudo sed -i "s/^DB_HOST=.*/DB_HOST=terraform-20240501161537072800000003.cjr4qbxdh5o6.us-east-1.rds.amazonaws.com/" .env
+sudo sed -i "s/^DB_DATABASE=.*/DB_DATABASE=tasks/" .env
+sudo sed -i "s/^DB_USERNAME=.*/DB_USERNAME=laravel_user/" .env
+sudo sed -i "s/^DB_PASSWORD=.*/DB_PASSWORD=gitpass2016/" .env
 
 php artisan migrate
 php artisan db:seed
