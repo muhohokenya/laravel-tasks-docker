@@ -2,7 +2,7 @@
 
 # shellcheck disable=SC2154
 #echo "DB_HOST=${db_endpoint}"
-DB_HOST="terraform-20240501193520344200000003.cjr4qbxdh5o6.us-east-1.rds.amazonaws.com"
+DB_HOST="terraform-20240501230415304200000003.cjr4qbxdh5o6.us-east-1.rds.amazonaws.com"
 sudo sed -i "s/^DB_HOST=.*/DB_HOST=$DB_HOST/" .env
 sudo sed -i "s/^DB_DATABASE=.*/DB_DATABASE=tasks/" .env
 sudo sed -i "s/^DB_USERNAME=.*/DB_USERNAME=laravel_user/" .env
