@@ -32,7 +32,7 @@ sudo chmod -R 777 /var/www/html/storage /var/www/html/bootstrap/cache
 
 # shellcheck disable=SC2154
 #echo "DB_HOST=${db_endpoint}"
-DB_HOST="terraform-20240502195531721800000003.cjr4qbxdh5o6.us-east-1.rds.amazonaws.com"
+DB_HOST="terraform-20240503093647099400000003.cjr4qbxdh5o6.us-east-1.rds.amazonaws.com"
 sudo sed -i "s/^DB_HOST=.*/DB_HOST=$DB_HOST/" .env
 sudo sed -i "s/^DB_DATABASE=.*/DB_DATABASE=tasks/" .env
 sudo sed -i "s/^DB_USERNAME=.*/DB_USERNAME=laravel_user/" .env
